@@ -13,7 +13,10 @@ const Header = (props) => {
             </div>
             <div>
                 <nav>
-                    
+                    <a href = "home">Home</a>
+                    <a href = "About">About</a>
+                    <a href = "contact">Contact</a>
+                    <a href = "services">Service</a>
                 </nav>
             </div>
             </div>
