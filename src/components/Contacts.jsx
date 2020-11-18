@@ -24,6 +24,13 @@ import Contact from "./Contact"
              }
          ]
      }
+     onDeleteHandler = (id) => {
+        console.log(id);
+        const newContact = this.state.contacts.filter(contact => {
+            return contact.id !== id; 
+        });
+        this.setState({contacts: newContact});
+     }
    
     render() {
         return (
@@ -35,7 +42,7 @@ import Contact from "./Contact"
                             email = {contact.email}
                             phone = {contact.phone}
                             id = {contact.id}
-
+                            deleteClickHandler = {() => this.onDeleteHandler(contact.id)}
                             />
                         )
                     })
