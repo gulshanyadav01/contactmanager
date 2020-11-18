@@ -16,28 +16,29 @@ import { Consumer } from "../Context"
     render() {
         return (
             <Consumer>
-               {value => {
-                   const {contacts} = value;
+                { value => {
+                    return (
+            <div>
+        {
+            value.contacts.map(contact => {
                 return (
-                    <React.Fragment>
-                        {
-                            contacts.map(contact => {
-                                return (
-                                    <Contact name = {contact.name}
-                                        email = {contact.email}
-                                        phone = {contact.phone}
-                                        id = {contact.id}
-                                        deleteClickHandler = {() => this.onDeleteHandler(contact.id)}
-                                    />
-                                )
-                            })
-                        }
-                    </React.Fragment>
-        )
-               }} 
-            </Consumer>
+                    <Contact name = {contact.name}
+                        email = {contact.email}
+                        phone = {contact.phone}
+                        id = {contact.id}
+                        deleteClickHandler = {() => this.onDeleteHandler(contact.id)}
+                    />
+                )
+            })
+        }
+    </div>
+)
+
+        }}
+    </Consumer>
         );
         
     }
 }
 export default Contacts; 
+
