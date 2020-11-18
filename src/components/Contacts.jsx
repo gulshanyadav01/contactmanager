@@ -22,20 +22,29 @@ import Contact from "./Contact"
                  email:"karan@gmail.com",
                  phone:"9654536064"
              }
-         ]
+         ],
+         showInfo:false
+     }
+     showInfoHandler = () =>  {
+        this.setState({showInfo: !this.state.showInfo})
      }
     render() {
-        const {contacts } = this.state;
         return (
             <div>
-                {contacts.map(contact => (
-                    <Contact 
-                        id = {contact.id}
-                        name = {contact.name}
-                        email = {contact.email}
-                        phone = {contact.phone}
-                    />
-                ))}
+                {
+                    this.state.contacts.map(contact => {
+                        return (
+                            <Contact name = {contact.name}
+                            email = {contact.email}
+                            phone = {contact.phone}
+                            id = {contact.id}
+                            click = {this.showInfoHandler}
+                            show = {this.state.showInfo}
+
+                            />
+                        )
+                    })
+                }
             </div>
         )
     }
