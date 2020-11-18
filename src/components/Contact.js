@@ -2,16 +2,24 @@ import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 class Contact extends Component {
+    state = {
+        showInfo: false
+    }
+
+    showInfoHandler = () =>  {
+        this.setState({showInfo: !this.state.showInfo})
+     }
     render() {
         return (
             <div>
-                <h4>{this.props.name}  <ExpandMoreIcon  onClick = {this.props.click}/></h4>
-              {this.props.show ?
-                <ul>
+                <h4>{this.props.name}  <ExpandMoreIcon  onClick = {this.showInfoHandler}/></h4>
+                {this.state.showInfo ? 
+               ( <ul>
                     <li>Email:{this.props.email}</li>
                     <li>Phone:{this.props.phone}</li>
-                </ul>
-                : null}
+                </ul>)
+                :null}
+               
 
                
             </div>
