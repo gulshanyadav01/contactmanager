@@ -7,7 +7,7 @@ import { Provider } from "./Context"
 
 function App() {
   return (
-    <Provider >
+    <Provider>
       <div className="App">
         <Header branding = "Contact Manager" />
         <Contacts />
