@@ -27,7 +27,7 @@ class Contact extends Component {
                     const { dispatch } = value;
                     return (
                         <div>
-                <h4>{this.props.name}  <ExpandMoreIcon  onClick = {this.showInfoHandler}/> <DeleteIcon onClick = {() => this.onDeleteClick(value.contacts.id, dispatch)} /> </h4>
+                <h4>{this.props.name}  <ExpandMoreIcon  onClick = {this.showInfoHandler}/> <DeleteIcon onClick = {this.onDeleteClick.bind(this, value.contacts.id, dispatch)} /> </h4>
                 {this.state.showInfo ? 
                ( <ul>
                     <li>Email:{this.props.email}</li>
