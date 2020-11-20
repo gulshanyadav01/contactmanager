@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Consumer  } from "../../Context1"
 import uuid from "react-uuid"; 
+import TextInput from "../Layout/TextInput"
 
 class AddContact extends Component {
 
@@ -10,7 +11,7 @@ class AddContact extends Component {
         phone:""
     }
 
-    onchange = (e) => { 
+    onChange = (e) => { 
         this.setState({[e.target.name]:e.target.value})
     }
 
@@ -25,7 +26,7 @@ class AddContact extends Component {
             email,
             phone
         }
-        console.log(newContact);
+        // console.log(newContact);
 
         dispatch({
             type:"ADD_CONTACT",
@@ -48,13 +49,38 @@ class AddContact extends Component {
                     return (
                             <div>
                             <form onSubmit = {this.onSubmit.bind(this, dispatch)}>
-                                    <label htmlFor = "name">Name:</label>
+                                    <TextInput 
+                                        label = "Name"
+                                        name = "name"
+                                        placeholder = "Enter Name"
+                                        value = {name}
+                                        onChange = {this.onChange}
+                                    /><br/>
+
+                                    <TextInput 
+                                        label = "email"
+                                        name = "email"
+                                        type = "email"
+                                        placeholder = "Enter email"
+                                        value = {email}
+                                        onChange = {this.onChange}
+                                    /><br/>
+                                    <TextInput 
+                                        label = "Phone"
+                                        name = "phone"
+                                        placeholder = "Enter phone"
+                                        value = {phone}
+                                        onChange = {this.onChange}
+                                    /><br/>
+
+
+                                    {/* /* <label htmlFor = "name">Name:</label>
                                     <input type = "text" placeholder = 'enter name' name = "name" onChange = {this.onchange} value = {name}/><br/>
                                     <label htmlFor = "email">Email:</label>
                                     <input type = "text" placeholder = 'enter email' name = "email" onChange = {this.onchange} value = {email}/><br/>
                                     <label htmlFor = "Phone">Phone:</label>
-                                    <input type = "Number" placeholder = 'enter Phone' name = "phone" onChange = {this.onchange} value = {phone}/><br/>
-                                    <input type = "submit" value = "add contact"/>
+                                    <input type = "Number" placeholder = 'enter Phone' name = "phone" onChange = {this.onchange} value = {phone}/><br/> */}
+                                    <input type = "submit" value = "add contact"/> */
                             </form>
                             </div>
                     )
