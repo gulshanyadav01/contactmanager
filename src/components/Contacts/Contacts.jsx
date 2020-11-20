@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Contact from "./Contact"
 
-import { Consumer } from "../Context1"
+import { Consumer } from "../../Context1"
 
  class Contacts extends Component {
   

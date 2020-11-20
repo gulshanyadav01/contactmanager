@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { Consumer } from "../Context1";
+import { Consumer } from "../../Context1";
 
 class Contact extends Component {
     state = {
