@@ -38,7 +38,7 @@ class Contact extends Component {
                 </ul>)
                 :null}
             </div>
-                    )
+                    );
                 }}
             </Consumer>
             
