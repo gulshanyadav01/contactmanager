@@ -6,7 +6,7 @@ const Context = React.createContext();
 
 const reducer = (state, action) => { 
     switch(action.type){
-        case "DELETE_CONTACT":
+        case("DELETE_CONTACT"):
             return {
                 ...state,
                 contacts: state.contacts.filter(contact =>
@@ -40,7 +40,7 @@ export class Provider extends Component {
                 phone:"9654536064"
             }
         ],
-        dispatch: action => {this.setState(state => reducer(state, action))}
+        dispatch: action => this.setState(state => reducer(state, action))
     }
     render(){
         return(

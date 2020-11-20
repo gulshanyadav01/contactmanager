@@ -14,6 +14,7 @@ class Contact extends Component {
      }
 
      onDeleteClick = (id, dispatch) => { 
+         console.log(id);
          dispatch({
              type:"DELETE_CONTACT",
              payload:id
@@ -21,17 +22,19 @@ class Contact extends Component {
      }
 
     render() {
+        const {name ,email ,phone ,id} = this.props.contact;
         return (
             <Consumer>
                 {value => {
                     const { dispatch } = value;
+                   
                     return (
                         <div>
-                <h4>{this.props.name}  <ExpandMoreIcon  onClick = {this.showInfoHandler}/> <DeleteIcon onClick = {this.onDeleteClick.bind(this, value.contacts.id, dispatch)} /> </h4>
+                <h4>{name}  <ExpandMoreIcon  onClick = {this.showInfoHandler}/> <DeleteIcon onClick = {this.onDeleteClick.bind(this, id, dispatch)} /> </h4>
                 {this.state.showInfo ? 
                ( <ul>
-                    <li>Email:{this.props.email}</li>
-                    <li>Phone:{this.props.phone}</li>
+                    <li>Email:{email}</li>
+                    <li>Phone:{phone}</li>
                 </ul>)
                 :null}
             </div>

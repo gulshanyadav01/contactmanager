@@ -15,10 +15,8 @@ import { Consumer } from "../Context1"
         {
             value.contacts.map(contact => {
                 return (
-                    <Contact name = {contact.name}
-                        email = {contact.email}
-                        phone = {contact.phone}
-                        id = {contact.id}
+                    <Contact 
+                        contact = {contact}
                     />
                 )
             })
