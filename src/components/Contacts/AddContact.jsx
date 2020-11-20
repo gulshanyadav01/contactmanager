@@ -80,7 +80,7 @@ class AddContact extends Component {
                                     <input type = "text" placeholder = 'enter email' name = "email" onChange = {this.onchange} value = {email}/><br/>
                                     <label htmlFor = "Phone">Phone:</label>
                                     <input type = "Number" placeholder = 'enter Phone' name = "phone" onChange = {this.onchange} value = {phone}/><br/> */}
-                                    <input type = "submit" value = "add contact"/> */
+                                    <input type = "submit" value = "add contact"/> 
                             </form>
                             </div>
                     )
