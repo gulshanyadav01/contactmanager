@@ -13,7 +13,7 @@ const reducer = (state, action) => {
                     contact.id !== action.payload)
             }
 
-        case "Add_CONTACT":
+        case "ADD_CONTACT":
             return {
                 ...state,
                 contacts: [action.payload, 
