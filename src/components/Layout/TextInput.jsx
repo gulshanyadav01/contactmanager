@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
- const TextInput = ({label, name, type, placeholder,onChange, value}) => {
+ const TextInput = ({label, name, type, placeholder,onChange, value, error }) => {
        
     return (
         <div>

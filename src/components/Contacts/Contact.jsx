@@ -30,7 +30,7 @@ class Contact extends Component {
                    
                     return (
                         <div>
-                <h4>{name}  <ExpandMoreIcon  onClick = {this.showInfoHandler}/> <DeleteIcon onClick = {this.onDeleteClick.bind(this, id, dispatch)} /> </h4>
+                <h4>{name}  <ExpandMoreIcon  onClick = {this.showInfoHandler}/> <DeleteIcon onClick = {this.onDeleteClick.bind(this, id, dispatch)} style ={{color:"crimson",}} /> </h4>
                 {this.state.showInfo ? 
                ( <ul>
                     <li>Email:{email}</li>
