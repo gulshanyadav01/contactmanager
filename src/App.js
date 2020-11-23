@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { Provider } from "./Context"
 import { Provider } from "./Context1"; 
 import AddContact from "./components/Contacts/AddContact"
-
+import NotFound from "./components/NotFound"
 function App() {
   return (
     <Provider>
@@ -17,7 +17,7 @@ function App() {
         <Switch>
           <Route exact path = '/' component = {Contacts}/>
           <Route exact path = "/AddContact" component = {AddContact}/>
-        
+          <Route component ={NotFound}/>
         </Switch>
       </div>
     </Router>
