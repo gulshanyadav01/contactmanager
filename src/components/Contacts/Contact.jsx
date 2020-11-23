@@ -4,6 +4,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Consumer } from "../../Context1";
 import axios from "axios"
+import CreateIcon from '@material-ui/icons/Create';
+import {NavLink} from "react-router-dom"; 
 
 class Contact extends Component {
     state = {
@@ -14,15 +16,19 @@ class Contact extends Component {
         this.setState({showInfo: !this.state.showInfo})
      }
 
-     onDeleteClick = (id, dispatch) => { 
+     onDeleteClick = async (id, dispatch) => { 
         //  console.log(id);
-        axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
-        .then(res => {
-            dispatch({
-                type:"DELETE_CONTACT",
-                payload:id
-            });
-        });
+        try{
+            await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+        dispatch({
+            type: "DELETE_CONTACT",
+            payload: id
+        })
+        }
+        catch(err){
+            console.log(err); 
+        }
+        
          
      }
 
@@ -35,7 +41,10 @@ class Contact extends Component {
                    
                     return (
                         <div>
-                <h4>{name}  <ExpandMoreIcon  onClick = {this.showInfoHandler}/> <DeleteIcon onClick = {this.onDeleteClick.bind(this, id, dispatch)} style ={{color:"red",}} /> </h4>
+                <h4>{name}  <ExpandMoreIcon  onClick = {this.showInfoHandler}/> <NavLink to = {`contact/edit/${id}`}>
+                <CreateIcon style ={{color:"green", marginRight:"10px"}}/> 
+                </NavLink>
+                <DeleteIcon onClick = {this.onDeleteClick.bind(this, id, dispatch)} style ={{color:"red", cursor:"pointer"}} />  </h4>
                 {this.state.showInfo ? 
                ( <ul>
                     <li>Email:{email}</li>

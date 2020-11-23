@@ -4,13 +4,24 @@ import { Consumer  } from "../../Context1"
 import TextInput from "../Layout/TextInput"
 import axios from "axios"
 
-class AddContact extends Component {
+class EditContact extends Component {
 
     state = {
         name:"", 
         email:"",
         phone:"",
         errors: {}
+    }
+
+    async componentDidMount() {
+        const { id } = this.props.match.params;
+        const res = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
+        const contact = res.data; 
+        this.setState({
+            name: contact.name,
+            email: contact.email,
+            phone: contact.phone
+        })
     }
 
     onChange = (e) => { 
@@ -35,19 +46,7 @@ class AddContact extends Component {
             this.setState({errors: {phone: "phone is required"}}); 
             return;
         }
-        const newContact = {
-            name,
-            email,
-            phone,
 
-        }
-        // console.log(newContact);
-       const res  = await axios.post("https://jsonplaceholder.typicode.com/users", newContact)
-        dispatch({
-            type: "ADD_CONTACT", 
-            payload: res.data
-        })
-        
         this.setState({
             name:"",
             email:"",
@@ -102,7 +101,7 @@ class AddContact extends Component {
                                     <input type = "text" placeholder = 'enter email' name = "email" onChange = {this.onchange} value = {email}/><br/>
                                     <label htmlFor = "Phone">Phone:</label>
                                     <input type = "Number" placeholder = 'enter Phone' name = "phone" onChange = {this.onchange} value = {phone}/><br/> */}
-                                    <input type = "submit" value = "add contact"/> 
+                                    <input type = "submit" value = "update contact"/> 
                             </form>
                             </div>
                     )
@@ -113,4 +112,4 @@ class AddContact extends Component {
     }
 }
 
-export default AddContact; 
+export default EditContact; 

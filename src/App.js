@@ -9,6 +9,7 @@ import { Provider } from "./Context1";
 import AddContact from "./components/Contacts/AddContact"
 import NotFound from "./components/NotFound"
 import Test from "./components/Test/Test"
+import EditContact from "./components/Contacts/EditContact"
 function App() {
   return (
     <Provider>
@@ -18,7 +19,7 @@ function App() {
         <Switch>
           <Route exact path = '/' component = {Contacts}/>
           <Route exact path = "/AddContact" component = {AddContact}/>
-         
+         <Route exact path = "/contact/edit/:id" component = {EditContact}/>
           <Route exact path = "/test" component = {Test}/>
           <Route component ={NotFound}/>
         </Switch>
