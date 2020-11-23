@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "./Context1"; 
 import AddContact from "./components/Contacts/AddContact"
 import NotFound from "./components/NotFound"
+import Test from "./components/Test/Test"
 function App() {
   return (
     <Provider>
@@ -17,6 +18,8 @@ function App() {
         <Switch>
           <Route exact path = '/' component = {Contacts}/>
           <Route exact path = "/AddContact" component = {AddContact}/>
+         
+          <Route exact path = "/test" component = {Test}/>
           <Route component ={NotFound}/>
         </Switch>
       </div>
