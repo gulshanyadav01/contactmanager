@@ -2,6 +2,7 @@
 import './App.css';
 import Contacts from "./components/Contacts/Contacts"
 import Header from "./components/Layout/Header";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; 
 
 // import { Provider } from "./Context"
 import { Provider } from "./Context1"; 
@@ -10,11 +11,16 @@ import AddContact from "./components/Contacts/AddContact"
 function App() {
   return (
     <Provider>
+    <Router>
       <div className="App">
         <Header branding = "Contact Manager" />
-        <AddContact/>
-        <Contacts />
+        <Switch>
+          <Route exact path = '/' component = {Contacts}/>
+          <Route exact path = "/AddContact" component = {AddContact}/>
+        
+        </Switch>
       </div>
+    </Router>
     </Provider>
   );
 }
