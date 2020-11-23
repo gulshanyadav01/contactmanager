@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Consumer } from "../../Context1";
+import axios from "axios"
 
 class Contact extends Component {
     state = {
@@ -15,10 +16,14 @@ class Contact extends Component {
 
      onDeleteClick = (id, dispatch) => { 
         //  console.log(id);
-         dispatch({
-             type:"DELETE_CONTACT",
-             payload:id
-         });
+        axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+        .then(res => {
+            dispatch({
+                type:"DELETE_CONTACT",
+                payload:id
+            });
+        });
+         
      }
 
     render() {
