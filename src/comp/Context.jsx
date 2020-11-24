@@ -1,4 +1,5 @@
 import React, { Component } from "react"; 
+import axios from "axios"; 
 
 const Context = React.createContext(); 
 
@@ -24,25 +25,31 @@ const reducer = (state, action) => {
 
 export class Provider extends Component { 
     state = {
-       contacts: [
-           {   id:1,
-               name:"gulshan",
-               email:"gulshany01@gmail.com",
-               phone:"85005"
-           },
-           {id:2,
-            name:"gulshan",
-            email:"gulshany01@gmail.com",
-            phone:"85005"
-        },
-        {   id:3,
-            name:"gulshan",
-            email:"gulshany01@gmail.com",
-            phone:"85005"
-        }
-       ],
+       contacts: [],
        dispatch: action => this.setState(state => reducer(state,action))
     }
+
+    // this is known as the typicode 
+    componentDidMount(){
+        axios.get("https://jsonplaceholder.typicode.com/users")
+        .then(res => {
+            this.setState({
+                contacts: res.data
+            })
+        }).catch(err => {
+            console.log(err); 
+        })
+    }
+    
+    // async await 
+    // async componentDidMount(){
+    //     const res = await axios.get('https://jsonplaceholder.typicode.com/users'); 
+    //     this.setState({
+    //         contacts: res.data
+    //     })
+
+    // }
+
     render(){
         return(
             <Context.Provider value = {this.state}>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Consumer } from "./Context"
-
+import uuid from "react-uuid"
 class AddContact extends Component {
     state = {
         name:"",
@@ -18,6 +18,7 @@ class AddContact extends Component {
         e.preventDefault(); 
         const { name, email, phone } = this.state; 
         const newContact = {
+            id: uuid(),
             name,
             email,
             phone
@@ -27,7 +28,7 @@ class AddContact extends Component {
             type:"ADD_CONTACT",
             payload: newContact
         })
-        console.log(this.state);
+        // console.log(this.state);
 
     }
 
