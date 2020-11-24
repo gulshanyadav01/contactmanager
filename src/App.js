@@ -17,7 +17,7 @@ function App() {
       <div className="App">
         <Header branding = "Contact Manager" />
         <Switch>
-          <Route exact path = '/' component = {Contacts}/>
+          <Route  path = '/' component = {Contacts}/>
           <Route exact path = "/AddContact" component = {AddContact}/>
           <Route exact path = "/contact/edit/:id" component = {EditContact}/>
           <Route exact path = "/test" component = {Test}/>
