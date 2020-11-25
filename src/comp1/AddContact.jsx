@@ -28,6 +28,7 @@ class AddContact extends Component {
             payload: res.data
         })
         this.history.push("/");
+        // this is for redirect
 
     }
 
