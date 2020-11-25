@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Consumer } from "./Context"; 
+import axios from 'axios'; 
 
 class AddContact extends Component {
     state = {
@@ -12,7 +13,7 @@ class AddContact extends Component {
         this.setState({[e.target.name]: e.target.value}); 
     }
 
-    onSubmit = (dipatch, e) => { 
+    onSubmit = async (dipatch, e) => { 
         e.preventDefault(); 
         const { name, email, phone} = this.state; 
         // console.log(this.state); 
@@ -21,9 +22,10 @@ class AddContact extends Component {
             email,
             phone
         }
+       const res = await axios.post("https://jsonplaceholder.typicode.com/users", newContact);
         dipatch({
             type:"ADD_CONTACT",
-            payload: newContact
+            payload: res.data
         })
 
     }
