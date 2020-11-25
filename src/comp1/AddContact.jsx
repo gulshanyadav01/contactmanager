@@ -41,6 +41,7 @@ class AddContact extends Component {
                 {value =>{
                 return (
                     <div>
+                        
                         <form onSubmit = {this.onSubmit.bind(this,value.dispatch)}>
                             <input type = "text" name = "name" placeholder = "enter name" value = {name} onChange = {this.onChange}/><br/>
                             <input type = "email" name = "email" placeholder = "enter email" value = {email} onChange = {this.onChange}/><br/>
