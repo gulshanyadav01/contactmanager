@@ -27,7 +27,7 @@ class AddContact extends Component {
             type:"ADD_CONTACT",
             payload: res.data
         })
-        this.history.push("/")
+        this.history.push("/");
 
     }
 
