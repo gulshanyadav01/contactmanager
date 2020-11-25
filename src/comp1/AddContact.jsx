@@ -22,11 +22,12 @@ class AddContact extends Component {
             email,
             phone
         }
-       const res = await axios.post("https://jsonplaceholder.typicode.com/users", newContact);
+       const res = await axios.post("http://localhost:5000/addcontact", newContact);
         dipatch({
             type:"ADD_CONTACT",
             payload: res.data
         })
+        this.history.push("/")
 
     }
 
