@@ -65,7 +65,7 @@ class AddContact extends Component {
                 {value => {
                     const {dispatch} = value; 
                     return (
-                            <div>
+                            <div className = "w-1/2 mx-64 my-64 h-screen  rounded bg-blue-300   item-center">
                             <form onSubmit = {this.onSubmit.bind(this, dispatch)}>
                                     <TextInput 
                                         label = "Name"

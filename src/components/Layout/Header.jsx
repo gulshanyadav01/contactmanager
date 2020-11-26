@@ -13,7 +13,7 @@ const Header = (props) => {
                 <div className = "flex justify-between m-3">
                     <nav className = "m-3">
                         <NavLink to ="/" className = "m-3">Home</NavLink>
-                        <NavLink to ="/about">About us</NavLink> 
+                        <NavLink to ="/AddContact">About us</NavLink> 
                     </nav>
                 </div>
             </div>
