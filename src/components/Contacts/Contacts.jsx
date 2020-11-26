@@ -11,7 +11,7 @@ import { Consumer } from "../../Context1"
             <Consumer>
                 {value => {
                     return(
-                        <div>
+                        <div className = "flex justify-around flex-wrap ">
         {
             value.contacts.map(contact => {
                 return (

@@ -40,17 +40,18 @@ class Contact extends Component {
                     const { dispatch } = value;
                    
                     return (
-                        <div>
-                <h4>{name}  <ExpandMoreIcon  onClick = {this.showInfoHandler}/> <NavLink to = {`contact/edit/${id}`}>
-                <CreateIcon style ={{color:"green", marginRight:"10px"}}/> 
+                        <div className = "m-2 w-1/4 h-52 bg-gray-800 rounded hover:bg-gray-700 text-white font-bold" >
+                <h4>{name}  <ExpandMoreIcon  onClick = {this.showInfoHandler}/><div className ="flex justify-center mt-16"> <NavLink to = {`contact/edit/${id}`}>
+                <CreateIcon className = "rounded bg-green-400  text-white mr-2 hover:bg-green-700" style = {{width:"70px", height:"50px"}} /> 
                 </NavLink>
-                <DeleteIcon onClick = {this.onDeleteClick.bind(this, id, dispatch)} style ={{color:"red", cursor:"pointer"}} />  </h4>
+                <DeleteIcon  className = " text-red-800 bg-blue-100 rounded hover:bg-red-900 hover:text-red-600" style = {{width:"70px", height:"50px"}} onClick = {this.onDeleteClick.bind(this, id, dispatch)} /></div>  </h4>
                 {this.state.showInfo ? 
                ( <ul>
                     <li>Email:{email}</li>
                     <li>Phone:{phone}</li>
                 </ul>)
                 :null}
+
             </div>
                     )
                 }}
