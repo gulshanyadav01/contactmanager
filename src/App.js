@@ -13,7 +13,7 @@ function App() {
   return (
     <Provider>
     <Router basename = {process.env.PUBLIC_URL}>
-      <div className="App bg-gray-900 h-auto">
+      <div className="App bg-gray-700 h-auto">
         <Header branding = "Contact Manager" />
         <Switch>
           <Route   path = '/' component = {Contacts}/>
