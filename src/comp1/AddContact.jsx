@@ -22,11 +22,16 @@ class AddContact extends Component {
             email,
             phone
         }
-       const res = await axios.post("http://localhost:5000/addcontact", newContact);
         dipatch({
             type:"ADD_CONTACT",
-            payload: res.data
+            payload: newContact
         })
+       const res = await axios.post("http://localhost:5000/addcontact", newContact);
+
+       if(res){
+           console.log("created");
+       }
+        
         this.history.push("/");
         // this is for redirect
 

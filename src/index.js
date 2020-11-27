@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-  <div className = "bg-gray-900">
+  <div>
     <App />
   </div>  
   </React.StrictMode>,
