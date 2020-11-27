@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { Consumer  } from "../../Context1"
-// import uuid from "react-uuid"; 
+import uuid from "react-uuid"; 
 import TextInput from "../Layout/TextInput"
 import axios from "axios"
 
 class AddContact extends Component {
 
     state = {
+        id:uuid(),
         name:"", 
         email:"",
         phone:"",

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Consumer } from "./Context"
 import Contact from "./Contact"; 
 
+
 class Contacts extends Component {
     render() {
         return(
@@ -12,7 +13,13 @@ class Contacts extends Component {
                             {
                                 value.contacts.map(contact => {
                                     return(
-                                        <Contact contact = {contact}/>
+                                        <Contact 
+                                        name = { contact.name}
+                                        email = {contact.email}
+                                        phone = {contact.phone}
+                                        id = {contact.id}
+                
+                                        />
                                     )
                                 })
                             }

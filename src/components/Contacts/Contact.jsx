@@ -40,7 +40,7 @@ class Contact extends Component {
                     const { dispatch } = value;
                    
                     return (
-                        <div className = "m-2 w-1/2 h-48 bg-gray-800 rounded hover:bg-yellow-400 text-white font-bold" >
+                        <div className = "m-2 w-1/2 h-48 bg-gray-800 rounded hover:bg-yellow-400 hover:text-black text-white font-bold" >
                 <h4>{name}  <ExpandMoreIcon  onClick = {this.showInfoHandler}/>  </h4>
                 {this.state.showInfo ? 
                ( <ul>
