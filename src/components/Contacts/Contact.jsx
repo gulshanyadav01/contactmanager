@@ -45,7 +45,7 @@ class Contact extends Component {
                 {this.state.showInfo ? 
                ( <ul>
                     <li>Email:{email}</li>
-                    <li>Phone:{phone}</li
+                    <li>Phone:{phone}</li>
                 </ul>)
                 :null}
                 <div className ="flex justify-center mt-16 "> <NavLink to = {`contact/edit/${id}`}>
