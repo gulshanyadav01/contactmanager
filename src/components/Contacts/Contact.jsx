@@ -44,7 +44,7 @@ class Contact extends Component {
                 <h4>{name}  <ExpandMoreIcon  onClick = {this.showInfoHandler}/>  </h4>
                 {this.state.showInfo ? 
                ( <ul>
-                    <li>Email:{email}</li
+                    <li>Email:{email}</li>
                     <li>Phone:{phone}</li>
                 </ul>)
                 :null}
