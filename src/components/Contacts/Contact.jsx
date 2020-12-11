@@ -40,7 +40,7 @@ class Contact extends Component {
                     const { dispatch } = value;
                    
                     return (
-                        <div className = "m-2 w-1/2 h-48  rounded hover:bg-yellow-400 hover:text-black text-white font-bold" >
+                        <div className = "m-2 w-1/2 h-48 shadow-lg rounded hover:bg-yellow-400 hover:text-black  font-bold" style = {{backgroundColor:"#0D1633", color:"#92A2E4"}}>
                 <h4>{name}  <ExpandMoreIcon  onClick = {this.showInfoHandler}/>  </h4>
                 {this.state.showInfo ? 
                ( <ul>
@@ -49,9 +49,9 @@ class Contact extends Component {
                 </ul>)
                 :null}
                 <div className ="flex justify-center mt-16 "> <NavLink to = {`contact/edit/${id}`}>
-                <CreateIcon className = "rounded bg-green-400  text-white mr-2 hover:bg-green-700" style = {{width:"70px", height:"50px"}} /> 
+                <CreateIcon className = "rounded bg-green-100  text-blue-600  mr-2 hover:bg-blue-800 hover:text-blue-900" style = {{width:"70px", height:"50px"}} /> 
                 </NavLink>
-                <DeleteIcon  className = " text-red-800 bg-blue-100 rounded hover:bg-red-900 hover:text-red-600" style = {{width:"70px", height:"50px"}} onClick = {this.onDeleteClick.bind(this, id, dispatch)} /></div>
+                <DeleteIcon  className = " text-red-600 bg-red-100 rounded hover:bg-red-900 hover:text-red-600" style = {{width:"70px", height:"50px"}} onClick = {this.onDeleteClick.bind(this, id, dispatch)} /></div>
 
             </div>
                     )
